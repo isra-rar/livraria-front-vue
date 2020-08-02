@@ -1,0 +1,146 @@
+{
+  "crms": [
+    {
+      "razaoSocial": "Conselho Regional de Medicina da Paraiba",
+      "nomeFantasia": "CRM - PB",
+      "cnpj": "60957752000177",
+      "presidente": "Lucas Rodrigues",
+      "endereco": {
+        "cep": "58040440",
+        "logradouro": "Avenida Dom Pedro II",
+        "bairro": "Torre",
+        "numero": "1335",
+        "localidade": "João Pessoa",
+        "uf": "PB"
+      },
+      "id": 1
+    }
+  ],
+  "signup": [
+    {
+      "name": "Israel Araujo",
+      "email": "israel.araujo@vsoft.com.br",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 1
+    },
+    {
+      "name": "israel",
+      "email": "isra.rar@icloud.com",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 2
+    }
+  ],
+  "signin": [
+    {
+      "name": "Israel Araujo",
+      "email": "israel.araujo@vsoft.com.br",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 6
+    },
+    {
+      "email": "israel.araujo@vsoft.com.br",
+      "password": "12345",
+      "id": 7
+    },
+    {
+      "name": "israel",
+      "email": "isra.rar@icloud.com",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    }
+  ],
+  "instituicoes": [
+    {
+      "cnpj": "51710014000130",
+      "razaoSocial": "CRM - PB",
+      "tipoInstituicao": "CONSELHO",
+      "endereco": {
+        "logradouro": "Rua Pastor Rodolfo Beuttemuller",
+        "bairro": "Jardim Cidade Universitária",
+        "cep": "58052140",
+        "cidade": "João Pessoa",
+        "uf": "PB",
+        "numeroEndereco": "425",
+        "complemento": "Ao lado de x"
+      },
+      "id": 1
+    }
+  ],
+  "especialidades": [
+    {
+      "nomeEspecialidade": "Neuro",
+      "id": 1
+    },
+    {
+      "nomeEspecialidade": "Gastro",
+      "id": 2
+    },
+    {
+      "nomeEspecialidade": "Orto",
+      "id": 3
+    },
+    {
+      "nomeEspecialidade": "Cardio",
+      "id": 4
+    },
+    {
+      "nomeEspecialidade": "Fisio",
+      "id": 5
+    }
+  ],
+  "medicos": [
+    {
+      "nome": "Israel Araujo Rodridgues",
+      "cpf": "09696767439",
+      "rg": "9658747",
+      "endereco": {
+        "logradouro": "Rua Pastor Rodolfo Beuttemuller",
+        "bairro": "Jardim Cidade Universitária",
+        "cep": "58052140",
+        "cidade": "João Pessoa",
+        "uf": "PB",
+        "numeroEndereco": "425"
+      },
+      "especialidadeFk": {
+        "id": 5
+      },
+      "lotacaoFk": {
+        "id": 1
+      },
+      "id": 1
+    },
+    {
+      "nome": "Gabriel Araujo",
+      "cpf": "09696774439",
+      "rg": "98547857",
+      "endereco": {
+        "logradouro": "Rua Pastor Rodolfo Beuttemuller",
+        "bairro": "Jardim Cidade Universitária",
+        "cep": "58052140",
+        "cidade": "João Pessoa",
+        "uf": "PB",
+        "numeroEndereco": "425"
+      },
+      "especialidadeFk": {
+        "id": 1
+      },
+      "lotacaoFk": {
+        "id": 1
+      },
+      "id": 2
+    }
+  ]
+}
