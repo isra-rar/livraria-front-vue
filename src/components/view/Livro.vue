@@ -80,7 +80,7 @@
         :fields="fields"
         :current-page="pagina"
         :perPage="qtnpagina"
-        :loadData="laodCliente"
+        :loadData="loadLivro"
       />
     </div>
   </div>
@@ -106,11 +106,11 @@ export default {
       },
       livros: [],
       categorias: [
-        { value: "AÇÃO", text: "ACAO" },
+        { value: "ACAO", text: "AÇÃO" },
         { value: "TERROR", text: "TERROR" },
         { value: "ROMANCE", text: "ROMANCE" },
         { value: "DRAMA", text: "DRAMA" },
-        { value: "FICÇCÃO", text: "FICCAO" },
+        { value: "FICCAO", text: "FICÇÃO" },
       ],
       fields: [
         {
@@ -182,7 +182,7 @@ export default {
     linkGen(pageNum) {
       return pageNum === 1 ? "?" : `?page=${pageNum}`;
     },
-    laodCliente(livro, mode = "save") {
+    loadLivro(livro, mode = "save") {
       this.mode = mode;
       this.livro = { ...livro };
     },

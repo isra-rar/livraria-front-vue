@@ -5,6 +5,8 @@ import Home from '@/components/home/Home.vue';
 import Cliente from '@/components/view/Cliente.vue';
 import Livro from '@/components/view/Livro.vue'
 import Aluguel from '@/components/view/Aluguel.vue'
+import Reserva from '@/components/view/Reserva.vue'
+import Retirar from '@/components/view/Retirar.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +29,16 @@ const routes = [{
     name: 'aluguel',
     path: '/aluguel',
     component: Aluguel
+},
+{
+    name: 'reserva',
+    path: '/reserva',
+    component: Reserva
+},
+{
+    name: 'retirar',
+    path: '/retirar',
+    component: Retirar
 }
 ]
 

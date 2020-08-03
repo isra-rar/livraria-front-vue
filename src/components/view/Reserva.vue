@@ -1,37 +1,37 @@
 <template>
-  <div class="aluguel-admin">
-    <PageTitle icon="fa fa-users" main="Aluguel" />
+  <div class="reserva-admin">
+    <PageTitle icon="fa fa-users" main="Reserva" />
     <b-form>
-      <input type="hidden" id="user-id" v-model="aluguel.id" />
+      <input type="hidden" id="user-id" v-model="reserva.id" />
       <b-row>
         <b-col md="6" sm="12">
           <b-form-group label="Livro:" label-for="livro">
             <b-form-select v-model="newLivro.id">
               <option :value="null" disabled>Seleciona um Livro</option>
               <option
-                v-for="livroAluguel in livros"
-                :key="livroAluguel.titulo"
-                :value="livroAluguel.id"
-              >{{ livroAluguel.titulo }}</option>
+                v-for="livroReserva in livros"
+                :key="livroReserva.titulo"
+                :value="livroReserva.id"
+              >{{ livroReserva.titulo }}</option>
             </b-form-select>
           </b-form-group>
         </b-col>
         <b-col md="6" sm="12">
           <b-form-group label="Cliente:" label-for="cliente">
-            <b-form-select v-model="aluguel.cliente.id">
+            <b-form-select v-model="reserva.cliente.id">
               <option :value="null" disabled>Seleciona um cliente</option>
               <option
-                v-for="clienteAluguel in clientes"
-                :key="clienteAluguel.id"
-                :value="clienteAluguel.id"
-              >{{ clienteAluguel.nome }}</option>
+                v-for="clienteReserva in clientes"
+                :key="clienteReserva.id"
+                :value="clienteReserva.id"
+              >{{ clienteReserva.nome }}</option>
             </b-form-select>
           </b-form-group>
         </b-col>
       </b-row>
       <b-row>
         <b-col xs="12">
-          <b-button variant="success" v-if="mode === 'save'" @click="save">Alugar</b-button>
+          <b-button variant="success" v-if="mode === 'save'" @click="save">Reservar</b-button>
           <b-button variant="danger" v-if="mode === 'remove'" @click="remove">Excluir</b-button>
           <b-button class="ml-2" @click="reset">Cancelar</b-button>
           <b-button class="ml-2" variant="dark" @click="adicionarLivro">Adicionar livros</b-button>
@@ -47,7 +47,7 @@
         :bordered="true"
         :no-border-collapse="true"
         :fixed="true"
-        :items="aluguel.livros"
+        :items="reserva.livros"
         :fields="fields"
         small
       >
@@ -67,19 +67,19 @@ import { showError, baseApiUrl } from "@/global";
 import axios from "axios";
 
 export default {
-  name: "Aluguel",
+  name: "Reserva",
   components: { PageTitle },
   data() {
     return {
       mode: "save",
-      clienteAluguel: {},
+      clienteReserva: {},
       clientes: [],
-      livroAluguel: {},
+      livroReserva: {},
       livros: [],
       newLivro: {
         id: null,
       },
-      aluguel: {
+      reserva: {
         cliente: {
           id: null,
         },
@@ -109,19 +109,19 @@ export default {
       });
     },
     adicionarLivro() {
-      this.aluguel.livros.push(this.newLivro);
+      this.reserva.livros.push(this.newLivro);
       this.newLivro = {
         id: null,
       };
     },
     reset() {
       (this.mode = "save"),
-        (this.aluguel = { livros: [], cliente: { id: null } });
+        (this.reserva = { livros: [], cliente: { id: null } });
     },
     save() {
-      const method = this.aluguel.id ? "put" : "post";
-      const id = this.aluguel.id ? `/${this.aluguel.id}` : "";
-      axios[method](`${baseApiUrl}/alugueis${id}`, this.aluguel)
+      const method = this.reserva.id ? "put" : "post";
+      const id = this.reserva.id ? `/${this.reserva.id}` : "";
+      axios[method](`${baseApiUrl}/reservas${id}`, this.reserva)
         .then(() => {
           this.$toasted.global.defaultSuccess();
           this.reset();
@@ -129,8 +129,8 @@ export default {
         .catch(showError);
     },
     remove() {
-      const id = this.aluguel.id;
-      axios.delete(`${baseApiUrl}/alugueis/${id}`).then(() => {
+      const id = this.reserva.id;
+      axios.delete(`${baseApiUrl}/reservas/${id}`).then(() => {
         this.$toasted.global.defaultSuccess();
         this.reset();
       });
@@ -145,7 +145,7 @@ export default {
       });
     },
     removeLivro(value) {
-      var arr = this.aluguel.livros;
+      var arr = this.reserva.livros;
       var index = arr.indexOf(value);
       if (index > -1) {
         arr.splice(index, 1);

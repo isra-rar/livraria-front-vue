@@ -29,8 +29,7 @@ export default {
           children: [
             { text: 'Aluguel' },
             { text: 'Reserva' },
-            { text: 'Retirar' },
-            { text: 'Cancelar' }
+            { text: 'Retirar' }
           ]
         }
       ]
